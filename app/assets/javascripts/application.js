@@ -12,5 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require best_in_place
 //= require turbolinks
 //= require_tree .
+
+$(document).on("page:change", function() {
+  /* Activating Best In Place */
+  $(".best_in_place").best_in_place();
+});
+
+
+
