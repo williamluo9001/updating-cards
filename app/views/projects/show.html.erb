@@ -1,12 +1,5 @@
 <div id="board">
-	<% @project.cards.each do |card| %>
-		<div class="card">
-			<h3>
-				<%= best_in_place card, :title, as: :input, place_holder: "Click me to add content!" %>
-			</h3>
-			<p>
-				<%= best_in_place card, :body, as: :textarea, place_holder: "Put some stuff in here." %>
-			</p>
-		</div>
-	<% end %>
+
+
+	<%= render @project.cards %>
 </div>

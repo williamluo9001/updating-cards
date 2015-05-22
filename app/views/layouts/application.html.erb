@@ -8,6 +8,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+	<%= render 'shared/header' %>
 	<header>
 		<h1><%= @project ? @project.title : "Cards" %></h1>
 		<nav>

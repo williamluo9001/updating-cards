@@ -19,6 +19,12 @@
 $(document).on("page:change", function() {
   /* Activating Best In Place */
   $(".best_in_place").best_in_place();
+  $(document).on('ajax:success', '.card nav'), function() {
+  	$(this).closest('div').fadeOut();
+  });
+  // $('.card nav a').click(function() { 
+  // 	$(this).closest('div').fadeOut();
+  // })
 });
 
 

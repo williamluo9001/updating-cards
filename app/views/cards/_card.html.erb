@@ -1,0 +1,11 @@
+		<div class="card">
+			<header>
+			<h3>
+				<%= best_in_place card, :title, as: :input, place_holder: "Click me to add content!" %>
+			</h3>
+			<nav><%= link_to 'X', card_path(card), method: :delete, remote: true %></nav>
+		</header>
+			<p>
+				<%= best_in_place card, :body, as: :textarea, place_holder: "Put some stuff in here." %>
+			</p>
+		</div>
