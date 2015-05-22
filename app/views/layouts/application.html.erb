@@ -3,10 +3,23 @@
 <head>
   <title>Cards</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header>
+		<h1><%= @project.title || "Cards" %></h1>
+		<nav>
+			<% if user_signed_in? %>
+				<%= link_to 'projects', projects_path, class: :button %> |
+				<%= link_to 'logout', destroy_user_session_path, class: :button, method: :delete %>
+			<% else %>
+				<%= link_to 'log in', new_user_session_path, class: :button %> |
+				<%= link_to 'sign up', new_user_registration_path, class: :button %>
+			<% end %>
+		</nav>
+	</header>
 	
 	<% if flash[:notice] %>
 		<p id="notice"><%= notice %></p>

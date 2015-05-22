@@ -1,0 +1,9 @@
+<h1><%= @project.title %></h1>
+<div id="board">
+	<% @project.cards.each do |card| %>
+		<div class="card">
+			<h3><%= card.title %></h3>
+			<p><%= card.body %></p>
+		</div>
+	<% end %>
+</div>
