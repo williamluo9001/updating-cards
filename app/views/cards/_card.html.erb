@@ -11,6 +11,10 @@
 			<nav><%= link_to 'X', card_path(card), method: :delete, remote: true %></nav>
 		</header>
 			<p>
+				<% if current_user and current_user == card.project.user %>
 				<%= best_in_place card, :body, as: :textarea, place_holder: "Put some stuff in here." %>
+				<% else %>
+				<%= card.body %>
+				<% end %>
 			</p>
 		</div>
