@@ -1,20 +1,24 @@
 		<div class="card">
+			<% if current_user and current_user == card.project.user %>
 			<header>
 			<h3>
-				<% if current_user and current_user == card.project.user %>
-
+				
+				<h3>
 				<%= best_in_place card, :title, as: :input, place_holder: "Click me to add content!" %>
-				<% else %>
-					<%= card.title %>
-				<% end %>
-			</h3>
+				</h3>
+
 			<nav><%= link_to 'X', card_path(card), method: :delete, remote: true %></nav>
-		</header>
+			</header>
 			<p>
-				<% if current_user and current_user == card.project.user %>
 				<%= best_in_place card, :body, as: :textarea, place_holder: "Put some stuff in here." %>
-				<% else %>
-				<%= card.body %>
-				<% end %>
 			</p>
+			
+			<% else %>
+			<header>
+				<h3>
+					<%= card.title %></h3>
+				</header>
+				<p><%= card.body %></p>
+				<% end %>
+		
 		</div>

@@ -10,19 +10,7 @@
 <body>
 
 	<%= render 'shared/header' %>
-	<header>
-		<h1><%= @project ? @project.title : "Cards" %></h1>
-		<nav>
-			<% if user_signed_in? %>
-				<%= link_to 'projects', projects_path, class: :button %> |
-				<%= link_to('new card', project_cards_path(@project), class: :button, method: :post) if @project %>
-				<%= link_to 'logout', destroy_user_session_path, class: :button, method: :delete %>
-			<% else %>
-				<%= link_to 'log in', new_user_session_path, class: :button %> |
-				<%= link_to 'sign up', new_user_registration_path, class: :button %>
-			<% end %>
-		</nav>
-	</header>
+	
 	
 	<% if flash[:notice] %>
 		<p id="notice"><%= notice %></p>
